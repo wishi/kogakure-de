@@ -42,10 +42,10 @@ category_detail_dict = {
 
 static_urls = (
     '/',
-    '/inhalt/',
-    '/kaufempfehlungen',
-    '/lexikon/',
-    '/sprueche/',
+    '/content/',
+    '/recommends',
+#    '/lexikon/',
+    '/proverbs/',
     '/info/',
     '/faq/'
 )
@@ -58,15 +58,15 @@ sitemaps = {
 }
 
 urlpatterns = patterns('',
-    (r'^artikel/', include('articles.urls')),
-    (r'^kurzmeldungen/', include('blog.urls')),
-    (r'^sprueche/', include('proverbs.urls')),
-    (r'^kaufempfehlungen/', include('products.urls')),
-    (r'^lexikon/', include('encyclopedia.urls')),
-    (r'^suche/$', 'search.views.search'),
-    url(r'^inhalt/', object_list, dict(inhalt_dict), name='inhaltsverzeichnis'),
-    url(r'^themen/(?P<category_slug>[-\w]+)/$', 'articles.views.category', name='thema'),
-    url(r'^kontakt/', 'contact.views.contact', name='kontakt'),
+    (r'^articles/', include('articles.urls')),
+    (r'^blog/', include('blog.urls')),
+    (r'^proverbs/', include('proverbs.urls')),
+    (r'^recommends/', include('products.urls')),
+ #   (r'^lexikon/', include('encyclopedia.urls')),
+    (r'^search/$', 'search.views.search'),
+    url(r'^content/', object_list, dict(inhalt_dict), name='inhaltsverzeichnis'),
+    url(r'^topics/(?P<category_slug>[-\w]+)/$', 'articles.views.category', name='thema'),
+    url(r'^contact/', 'contact.views.contact', name='kontakt'),
     # Admin
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),

@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block page_title %}{% trans "Contact" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
+{% block page_title %}Contact// crazylazy.info &ndash; crazylazy.info &ndash; programming, IT security and maehhh
+
+{% endblock %}</title> 
+
 
 {% block meta_description %}{% trans "Contact form" %}{% endblock %}
 
 {% block content %}
 
-<h1>{% trans "Contact" %}</h1>
+<h1>Contact</h1>
 
 {% if not form.errors %}
-    <p>{% blocktrans %}Here you can contact <a href="{{ WEB_URL }}info/">Stefan Imhoff</a>, the maintainer of this pages. I try to answer every email but can&rsquo;t give you guarantee. But first some guidelines:{% endblocktrans %}</p>
+    <p>{% blocktrans %}Here you can contact <a href="{{ WEB_URL }}info/">Marius Ciepluch</a>, the maintainer of this page. But first some guidelines:{% endblocktrans %}</p>
     <div class="note">
     <ul>
-        <li>{% trans "Keep your email <em>short</em>! (Please no complete life story on first contact)." %}</li>
-        <li>{% trans "Write that way reading can be done <em>without effort</em> (Write paragraphs, pay attention to orthography, punctuation, upper and lower case &hellip;)." %}</li>
-        <li>{% blocktrans %}Some questions are asked again and again. Please read the <a href="{{ WEB_URL }}faq/">Frequently Asked Questions</a> to avoid those.{% endblocktrans %}</li>
+        <li>{% trans "Keep your email <em>short and concise</em>!" %}</li>
+        <li>{% trans "No spam. Use a RFC compliant mailserver." %}
+        <li>{% trans "This is a private site. So don't offer me these stupid half-legal security jobs, because most stuff I write here isn't even qualified." %} 
     </ul>
     </div>
-    <p>{% trans "To follow those simple guidelines and a kind und ein freundlicher speech may help to speed up an answer." %}</p>
+    <p>{% trans "Answers take time." %}</p>
 {% else %}
     <h2>{% trans "There were errors!" %}</h2>
     <p>{% trans "The form coudn&rsquo;t be submitted, please check the following errors:" %}</p>

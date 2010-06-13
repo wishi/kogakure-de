@@ -54,7 +54,7 @@ INSTALLED_APPS = (
     'lib',
     'articles',
     'blog',
-    'encyclopedia',
+#    'encyclopedia',
     'products',
     'proverbs',
 

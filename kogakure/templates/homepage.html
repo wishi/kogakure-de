@@ -32,20 +32,22 @@
         {% cache 3600 welcome_text %}
 
             <div class="block">
-                <h2><a href="{{ WEB_URL }}info/">{% trans "About this page &hellip;" %}</a></h2>
-                <p>{% blocktrans %}This is <a href="{{ WEB_URL }}info/">kogakure.de</a>. Since 1999 you can read articles, text collections and translations on the topics around the japanese shadow warriors, spies and warriors &ndash; the Ninja &ndash; and their martial art Ninjutsu.{% endblocktrans %}</p>
+                <h2><a href="{{ WEB_URL }}info/">"About this page &hellip;"</a></h2>
+                <p>This is <a href="{{ WEB_URL }}info/">crazylazy.info</a>. It's about
+bughunting, reversing, debugging, programming, hacking and funstuff.
+		</p>
             </div>
             <hr />
             <div class="block">
-                <h2><a href="{% url artikel "ninjutsu" %}">{% trans "First visit?" %}</a></h2>
-                <p>{% trans "Is this your first visit on this page?" %} {% trans "If that&rsquo;s the case you should read the article" %} „<a href="{% url artikel "ninjutsu" %}">Ninjutsu</a>“ {% trans "to understand what&rsquo;s all about this page." %}</p>
+                <h2><a href="{% url artikel "magic" %}">First visit?</a></h2>
+                <p>Is this your first visit on this page? If that is you shoud read the article the <a href="{% url artikel "magic">info section</a> to understand what&rsquo;s all about this.</p>
             </div>
             <hr />
 
         {% endcache %}
 
         <div id="recent_blog" class="block">
-            <h2><a href="{% url kurzmeldungen_liste %}">{% trans "Blog" %}</a></h2>
+            <h2><a href="{% url kurzmeldungen_liste %}">Blog</a></h2>
             {% get_all blog.Entry 1 as recent_blog_entry order_by -pub_date %}
             {% for blog_entry in recent_blog_entry %}
                 <h3><a href="{{ blog_entry.get_absolute_url }}">{{ blog_entry.title }}</a></h3>
